@@ -34,7 +34,7 @@ func usage(errmsg string) {
 }
 
 func main() {
-	const svcName = "myservice"
+	const svcName = "SanseraAPIApp"
 
 	inService, err := svc.IsWindowsService()
 	if err != nil {
@@ -55,8 +55,7 @@ func main() {
 		runService(svcName, true)
 		return
 	case "install":
-		err = installService(svcName, "my service")
-		log.Printf("Error : %#v", err)
+		err = installService(svcName, svcName)
 	case "remove":
 		err = removeService(svcName)
 	case "start":
